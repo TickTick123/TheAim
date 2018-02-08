@@ -1,4 +1,4 @@
-package com.example.zqf.theaim.ZQF;
+package com.example.zqf.theaim;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,7 +9,6 @@ import android.net.NetworkInfo;
 
 /**
  * 工具类
- *
  */
 public class Util {
 
