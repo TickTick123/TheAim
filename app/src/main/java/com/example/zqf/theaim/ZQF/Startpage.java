@@ -2,12 +2,15 @@ package com.example.zqf.theaim.ZQF;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 
 import com.example.zqf.theaim.R;
 
 import cn.bmob.v3.Bmob;
 
 public class Startpage extends AppCompatActivity {
+
+    private Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
