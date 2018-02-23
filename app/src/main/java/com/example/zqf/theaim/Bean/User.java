@@ -67,4 +67,5 @@ public class User extends BmobUser {
 	public void setPicUser(BmobFile picUser) {
 		this.picUser = picUser;
 	}
+
 }
