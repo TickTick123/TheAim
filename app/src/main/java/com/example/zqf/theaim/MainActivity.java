@@ -1,11 +1,14 @@
 package com.example.zqf.theaim;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+
+
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,12 +19,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.zqf.theaim.Fragment.TodayFragment;
+
 import cn.bmob.v3.BmobUser;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    AimFragment aimfragment;                    //  目标箱碎片
-    CalendarFragment calendarfragment;             //日历碎片
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +67,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main, menu);                           //添加菜单项
         return true;
     }
 
@@ -76,7 +79,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings) {                   //菜单按钮相应
             return true;
         }
 
@@ -87,32 +90,19 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        FragmentManager fm=getFragmentManager();
-        FragmentTransaction transaction=fm.beginTransaction();      //fragment控制器
 
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {                        //今天
-            // Handle the camera action
+        if (id == R.id.nav_camera) {                              //今天
+            replaceFragment(new TodayFragment());
+
         } else if (id == R.id.nav_gallery) {                    //目标箱
 
-            if(calendarfragment==null) {
-                calendarfragment=new CalendarFragment();
-            }
-            transaction.replace(R.id.content,calendarfragment);
-            transaction.commit();
 
         } else if (id == R.id.nav_slideshow) {                  //日程箱
 
-
-
         } else if (id == R.id.nav_manage) {                     //日历
 
-            if(aimfragment==null) {
-                aimfragment=new AimFragment();
-            }
-            transaction.replace(R.id.content,aimfragment);
-            transaction.commit();
 
         } else if (id == R.id.nav_share) {                      //奖励箱
 
@@ -125,4 +115,12 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private void replaceFragment(Fragment fragment){                    //fragment切换
+            FragmentManager fm=getSupportFragmentManager();              //新的fragment的不同之处
+            FragmentTransaction transaction=fm.beginTransaction();      //fragment控制器
+            transaction.replace(R.id.content,fragment);
+            transaction.commit();
+    }
+
 }
