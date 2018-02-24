@@ -24,7 +24,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Startpage"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -33,23 +34,28 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true"
-            android:label="@string/login" />
+            android:label="@string/login"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".RegisterActivity"
             android:exported="true"
-            android:label="@string/login_5" />
+            android:label="@string/login_5"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".PhoneRegisterActivity"
             android:exported="true"
-            android:label="@string/login_6" />
+            android:label="@string/login_6"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ForgetPasswordActivity"
             android:exported="true"
-            android:label="@string/login_4" />
+            android:label="@string/login_4"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"></activity>
 
     </application>
 

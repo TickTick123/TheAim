@@ -1,8 +1,11 @@
 package com.example.zqf.theaim;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,6 +20,8 @@ import cn.bmob.v3.BmobUser;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    AimFragment aimfragment;                    //  目标箱碎片
+    CalendarFragment calendarfragment;             //日历碎片
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +30,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);           //日程添加
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);           //悬浮按钮用于日程添加
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,17 +87,34 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        FragmentManager fm=getFragmentManager();
+        FragmentTransaction transaction=fm.beginTransaction();      //fragment控制器
+
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_camera) {                        //今天
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_gallery) {                    //目标箱
 
-        } else if (id == R.id.nav_slideshow) {
+            if(calendarfragment==null) {
+                calendarfragment=new CalendarFragment();
+            }
+            transaction.replace(R.id.content,calendarfragment);
+            transaction.commit();
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_slideshow) {                  //日程箱
 
-        } else if (id == R.id.nav_share) {
+
+
+        } else if (id == R.id.nav_manage) {                     //日历
+
+            if(aimfragment==null) {
+                aimfragment=new AimFragment();
+            }
+            transaction.replace(R.id.content,aimfragment);
+            transaction.commit();
+
+        } else if (id == R.id.nav_share) {                      //奖励箱
 
         }
 //        else if (id == R.id.nav_send) {
