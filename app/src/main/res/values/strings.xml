@@ -15,4 +15,11 @@
     <string name="phone_reg_3">获取验证码</string>
     <string name="phone_forget_1">请输入新密码</string>
     <string name="phone_forget_2">重置密码</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
 </resources>

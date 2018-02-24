@@ -22,29 +22,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Startpage">
+        <activity
+            android:name=".Startpage"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:label="@string/login"
             android:name=".LoginActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/login" />
         <activity
-            android:label="@string/login_5"
             android:name=".RegisterActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="@string/login_5" />
         <activity
-            android:label="@string/login_6"
             android:name=".PhoneRegisterActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:label="@string/login_6" />
         <activity
-            android:label="@string/login_4"
             android:name=".ForgetPasswordActivity"
-            android:exported="true"/>
+            android:exported="true"
+            android:label="@string/login_4" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
     </application>
 
