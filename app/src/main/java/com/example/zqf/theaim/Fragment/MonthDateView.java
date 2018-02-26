@@ -339,6 +339,7 @@ public class MonthDateView extends View {
      * @return
      */
     public int getmSelMonth() {
+        mSelMonth = mSelMonth + 1 ;
         return mSelMonth;
     }
 

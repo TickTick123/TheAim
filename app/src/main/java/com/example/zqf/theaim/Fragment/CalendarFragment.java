@@ -32,12 +32,12 @@ public class CalendarFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_calendar,null);
-        monthDateView = (MonthDateView) view.findViewById(R.id.monthDateView);
+        /*monthDateView = (MonthDateView) view.findViewById(R.id.monthDateView);
         monthDateView.setDateClick(new MonthDateView.DateClick() {
             public void onClickOnDate() {
                 Toast.makeText(getContext(), monthDateView.getmSelYear()+"年"+monthDateView.getmSelMonth()+"月"+ monthDateView.getmSelDay()+"日", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
         // Inflate the layout for this fragment
         return view;
