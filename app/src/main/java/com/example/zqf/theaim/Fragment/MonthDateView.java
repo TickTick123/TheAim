@@ -206,28 +206,7 @@ public class MonthDateView extends View {
         return true;
     }
 
-    //左右滑动切换月份
-    private GestureDetector mGestureDetector;
 
-
-    public class LearnGestureListener  extends GestureDetector.SimpleOnGestureListener {
-        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-            if (e1.getX() - e2.getX() > 120) {
-                // 像左滑动
-                enterNextMonth();
-                return true;
-            } else if (e1.getX() - e2.getX() < -120) {
-                // 向右滑动
-                enterPrevMonth();
-                return true;
-            }
-            return false;
-        }
-
-        public boolean onDown(MotionEvent e) {
-            return true;
-        }
-    }
 
 
     private void enterNextMonth() {

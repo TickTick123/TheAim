@@ -20,20 +20,17 @@ import static com.example.zqf.theaim.Fragment.MonthDateView.getMonthDays;
 
 
 public class CalendarFragment extends Fragment{
-    GestureDetector detector;
-
-    final int distance = 50;
+    private MonthDateView monthDateView;
     public CalendarFragment() {
 
     }
-
     @Override
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        View view = inflater.inflate(R.layout.fragment_calendar,null);
+       
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calendar, container, false);
+        return view;
 
     }
 
