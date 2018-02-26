@@ -24,6 +24,7 @@ public class TodayFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        //测试
         return inflater.inflate(R.layout.fragment_today, container, false);
     }
 
