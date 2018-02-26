@@ -7,10 +7,11 @@ import cn.bmob.v3.BmobObject;
  */
 
 public class Schedule extends BmobObject {
-    private String master;  //日程所属用户的ID
-    private String mastergoal;  //日程所属子目标的ID
+    private User master;  //日程所属用户的ID
+    private SmallGoal mastergoal;  //日程所属子目标的ID
     private String rewardpoint;  //此日程所得的奖励点（1，2，3）
     private String content;  //内容
+    private String decribe;  // 描述
     private String year;  //年
     private String mouth;  //月
     private String day;  //日
@@ -20,20 +21,28 @@ public class Schedule extends BmobObject {
     private String repeat;  //重复类型（如：每天，周五周六）
     private String taketime;  //所花时间（计时功能）
 
-    public String getMaster() {
+    public User getMaster() {
         return master;
     }
 
-    public void setMaster(String master) {
+    public void setMaster(User master) {
         this.master = master;
     }
 
-    public String getMastergoal() {
+    public SmallGoal getMastergoal() {
         return mastergoal;
     }
 
-    public void setMastergoal(String mastergoal) {
+    public void setMastergoal(SmallGoal mastergoal) {
         this.mastergoal = mastergoal;
+    }
+
+    public String getDecribe() {
+        return decribe;
+    }
+
+    public void setDecribe(String decribe) {
+        this.decribe = decribe;
     }
 
     public String getRewardpoint() {
