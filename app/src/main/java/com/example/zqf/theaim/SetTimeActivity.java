@@ -17,7 +17,7 @@ public class SetTimeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-       2 actionBar.setHomeAsUpIndicator(R.drawable.confirm); //修改actionbar左上角返回按钮的图标
+        actionBar.setHomeAsUpIndicator(R.drawable.confirm); //修改actionbar左上角返回按钮的图标
 
         setContentView(R.layout.activity_set_time);
     }
