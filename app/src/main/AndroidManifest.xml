@@ -52,6 +52,21 @@
             android:label="@string/login_4"
             android:screenOrientation="portrait"/>
 
+<<<<<<< HEAD
+=======
+        <activity
+            android:name=".AddAimActivity"
+            android:exported="true"
+            android:label="@string/addaim"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".SetTimeActivity"
+            android:exported="true"
+            android:label="@string/settime"
+            android:screenOrientation="portrait"/>
+
+>>>>>>> origin/master
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
