@@ -53,8 +53,6 @@ public class MonthDateView extends View {
         mCurrDay = calendar.get(Calendar.DATE);  //获取当前天
         setSelectYearMonth(mCurrYear, mCurrMonth, mCurrDay);
 
-
-
         detector = new GestureDetector(context, new GestureDetector.OnGestureListener() {
             @Override
             public boolean onDown(MotionEvent e) {
@@ -148,7 +146,7 @@ public class MonthDateView extends View {
             drawCircle(row, column, day + 1, canvas);
             if (dayString.equals(mSelDay + "")) {
                 mPaint.setColor(mSelectDayColor);
-            } else if (dayString.equals(mCurrDay + "") && mCurrDay != mSelDay && mCurrMonth == mSelMonth) {
+            } else if (dayString.equals(mCurrDay + "") && mCurrDay != mSelDay && mCurrMonth == mSelMonth && mCurrYear == mSelYear) {
                 //正常月，选中其他日期，则今日为红色
                 mPaint.setColor(mCurrentColor);
             } else {
@@ -182,8 +180,8 @@ public class MonthDateView extends View {
 
     private int downX = 0, downY = 0;
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) { //触摸滑动操作
+     @Override
+   public boolean onTouchEvent(MotionEvent event) { //触摸滑动操作
         int eventCode = event.getAction();
         switch (eventCode) {
             case MotionEvent.ACTION_DOWN:
@@ -201,15 +199,16 @@ public class MonthDateView extends View {
                 }
                 break;
         }
-        if (detector.onTouchEvent(event))
-        {return true;}
+         if (detector.onTouchEvent(event)) {
+            return true;
+        }
         return true;
     }
 
 
 
 
-    private void enterNextMonth() {
+    public void enterNextMonth() {
         int year = mSelYear;
         int month = mSelMonth;
         int day = mSelDay;
@@ -227,7 +226,7 @@ public class MonthDateView extends View {
         invalidate();
     }
 
-    private void enterPrevMonth() {
+    public void enterPrevMonth() {
         int year = mSelYear;
         int month = mSelMonth;
         int day = mSelDay;
@@ -330,7 +329,7 @@ public class MonthDateView extends View {
      * @return
      */
     public int getmSelYear() {
-        return mSelYear;
+        return this.mSelYear;
     }
 
     /**
@@ -339,8 +338,7 @@ public class MonthDateView extends View {
      * @return
      */
     public int getmSelMonth() {
-        mSelMonth = mSelMonth + 1 ;
-        return mSelMonth;
+        return this.mSelMonth;
     }
 
     /**
