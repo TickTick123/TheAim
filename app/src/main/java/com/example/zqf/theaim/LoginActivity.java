@@ -112,4 +112,5 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void toast(String toast) {           //Toast便捷使用方法
         Toast.makeText(this, toast, Toast.LENGTH_LONG).show();
     };
+
 }

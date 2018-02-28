@@ -17,7 +17,7 @@ public class Schedule extends BmobObject {
     private String day;  //日
     private String done;  //是否完成（ture:完成，false:未完成）
     private String time;  //所设置时间
-    private String remind;  //是否提醒（闹铃）
+    private String remind;  //是否提醒（闹铃）这三个先不用
     private String repeat;  //重复类型（如：每天，周五周六）
     private String taketime;  //所花时间（计时功能）
 
@@ -37,6 +37,14 @@ public class Schedule extends BmobObject {
         this.mastergoal = mastergoal;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     public String getDecribe() {
         return decribe;
     }
@@ -53,13 +61,7 @@ public class Schedule extends BmobObject {
         this.rewardpoint = rewardpoint;
     }
 
-    public String getContent() {
-        return content;
-    }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
 
     public String getYear() {
         return year;

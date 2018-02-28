@@ -22,11 +22,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.zqf.theaim.Bean.Schedule;
+import com.example.zqf.theaim.Bean.User;
 import com.example.zqf.theaim.Fragment.CalendarFragment;
 import com.example.zqf.theaim.Fragment.MonthDateView;
+import com.example.zqf.theaim.Fragment.ScheduleFragment;
 import com.example.zqf.theaim.Fragment.TodayFragment;
 
 import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -37,7 +42,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        //Util.isNetworkConnected(this);        //居然可以不创建对象的使用
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -112,6 +117,31 @@ public class MainActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_slideshow) {                  //日程箱
+            replaceFragment(new ScheduleFragment());
+
+//            Schedule p2 = new Schedule();                       //测试
+//            User user = BmobUser.getCurrentUser(User.class);
+//            p2.setMaster(user);
+//            //p2.setMastergoal();
+//            p2.setContent("ppp");
+//            p2.setDecribe("sdf");
+//            p2.setYear("20xcv1sdf8");
+//            p2.setMouth("sfxc");
+//            p2.setDay("27vcs");
+//            p2.setDone("flase");
+//            p2.setTime("22sdmin");
+//            p2.save(new SaveListener<String>() {
+//                @Override
+//                public void done(String objectId,BmobException e) {
+//                    if(e==null){
+//                        toast("添加数据成功，返回objectId为："+objectId);
+//                    }else{
+//                        toast("创建数据失败：" + e.getMessage());
+//                    }
+//                }
+//            });
+
+
 
         } else if (id == R.id.nav_manage) {                     //日历
             replaceFragment(new CalendarFragment());
@@ -134,6 +164,8 @@ public class MainActivity extends AppCompatActivity
             transaction.replace(R.id.content,fragment);
             transaction.commit();
     }
-
+    public void toast(String toast) {           //Toast便捷使用方法
+        Toast.makeText(this, toast, Toast.LENGTH_LONG).show();
+    };
 
 }

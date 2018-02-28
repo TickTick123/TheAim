@@ -12,6 +12,8 @@ import android.net.NetworkInfo;
  */
 public class Util {
 
+
+
 	/**
 	 * 判断电话号码是否有效
 	 * @param phoneNumber
